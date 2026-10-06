@@ -1,0 +1,18 @@
+# Core Deep Learning
+torch>=2.2.0
+torchvision>=0.17.0
+
+# Federated Learning Framework
+flwr>=1.8.0
+
+# Numerical & Data Processing
+numpy>=1.26.0
+pandas>=2.2.0
+
+# Configuration & Utilities
+pyyaml>=6.0.1
+tqdm>=4.66.0
+
+# Visualization & Document Generation
+matplotlib>=3.8.0
+fpdf2>=2.8.0

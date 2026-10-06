@@ -1,0 +1,51 @@
+# ==========================================
+# PAC-FL Simulation Configuration
+# ==========================================
+
+# Experiment Metadata
+experiment:
+  name: "pac_fl_cifar10_baseline"
+  seed: 42
+  num_rounds: 10
+  device: "cpu" # Set to "cuda" if GPU is available
+
+# Federated Setup
+federated:
+  total_clients: 20
+  clients_per_round: 5
+  fraction_fit: 0.25 # Fraction of clients selected per round
+
+# Dataset & Partitioning
+data:
+  dataset_name: "cifar10"
+  data_dir: "./data"
+  partition: "dirichlet"
+  dirichlet_alpha: 0.5 # 0.5 = moderate non-IID, 0.1 = severe non-IID
+  batch_size: 32
+
+# Model & Local Training
+model:
+  architecture: "SimpleCNN"
+  lr: 0.01
+  momentum: 0.9
+  weight_decay: 0.0001
+  default_local_epochs: 3
+
+# Adaptive Battery Governor
+governor:
+  enabled: true
+  high_battery_threshold: 60.0 # >60% -> Full Tier (E=5)
+  low_battery_threshold: 30.0  # 30-60% -> Eco Tier (E=2), <30% -> Sleep
+  full_tier_epochs: 5
+  eco_tier_epochs: 2
+  sleep_tier_epochs: 0
+
+# Compression
+compression:
+  enabled: true
+  method: "int8" # "none" or "int8"
+
+# Fairness
+fairness:
+  enabled: true
+  credit_threshold: 3 # If client skipped 3 times, grant emergency slot

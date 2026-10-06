@@ -1,0 +1,30 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv/
+ENV/
+
+# Data & Datasets (never commit CIFAR-10 data)
+data/
+*.tar.gz
+*.zip
+
+# PyTorch Checkpoints & Outputs
+*.pt
+*.pth
+checkpoints/
+results/
+logs/
+*.csv
+
+# IDE & OS
+.vscode/
+.idea/
+*.swp
+.DS_Store
+Thumbs.db
