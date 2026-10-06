@@ -10,7 +10,7 @@ venv/
 ENV/
 
 # Data & Datasets (never commit CIFAR-10 data)
-data/
+/data/
 *.tar.gz
 *.zip
 
